@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laryngectomy Emergency Airway Management</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+</head>
+<body>
+
+    <div class="flowchart">
+        <!-- Step 1: Check if the patient is breathing -->
+        <div class="node" id="step-breathing">
+            <h1>Step 1: Is the patient breathing?</h1>
+            <button onclick="showInfo('info-breathing')">More Info</button>
+            <!-- More info button will display additional steps regarding breathing assessment -->
+        </div>
+
+        <!-- Information about patient breathing -->
+        <div class="info" id="info-breathing" style="display: none;">
+            <p>If the patient IS breathing, apply high flow oxygen to the laryngectomy stoma. If there is any doubt whether the patient has a laryngectomy, apply oxygen to the face as well.</p>
+            <p>Assess the laryngectomy stoma patency:</p>
+            <ul>
+                <li>Remove humidification cover or button if present.</li>
+                <li>Remove inner tube (if present).</li>
+                <li>Some inner tubes need re-inserting to connect to breathing circuits.</li>
+                <li>Do not remove a tracheoesophageal puncture (TEP) prosthesis.</li>
+            </ul>
+            <p>Can you pass a suction catheter? If not:</p>
+            <ul>
+                <li>Deflate the cuff (if present).</li>
+                <li>Look, listen & feel at the laryngectomy stoma or tube.</li>
+                <li>Use waveform capnography or Mapleson C if available.</li>
+            </ul>
+            <p>Continue with ABCDE assessment as per the flowchart instructions.</p>
+            <!-- Add buttons or links to further steps or external resources as needed -->
+        </div>
+
+
+        <!-- Step 2: Assess laryngectomy stoma patency -->
+        <div class="node" id="step-patency">
+            <h1>Step 2: Assess laryngectomy stoma patency</h1>
+            <button onclick="showInfo('info-patency')">More Info</button>
+        </div>
+        <!-- Information about laryngectomy stoma patency -->
+        <div class="info" id="info-patency" style="display: none;">
+            <p>Not all laryngectomy stomas will have a tube in situation. Remove humidification cover or button if present. Can you pass a suction catheter?</p>
+            <ul>
+                <li>If no, deflate the cuff if present.</li>
+                <li>Look, listen, and feel at the laryngectomy stoma or tube.</li>
+                <li>Use waveform capnography or Mapleson C if available.</li>
+                <li>If the patient is not improving, consider removing the tube.</li>
+            </ul>
+            <p>If the stoma is stable or improving, continue with ABCDE assessment and apply high flow oxygen if needed.</p>
+        </div> 
+
+
+        <!-- Step 3: Continue ABCDE assessment -->
+        <div class="node" id="step-abcde">
+            <h1>Step 3: Continue ABCDE assessment</h1>
+            <button onclick="showInfo('info-abcde')">More Info</button>
+        </div>
+        <!-- Information for ABCDE assessment -->
+        <div class="info" id="info-abcde" style="display: none;">
+            <p>Follow the ABCDE approach for patient assessment:</p>
+            <ul>
+                <li>Airway: Ensure that the airway is clear and assess for any obstruction.</li>
+                <li>Breathing: Check the patient's breathing rate, rhythm, and depth.</li>
+                <li>Circulation: Assess the patient's pulse and blood pressure.</li>
+                <li>Disability: Check the patient's level of consciousness and any neurological deficit.</li>
+                <li>Exposure: Ensure the patient's body is fully exposed to check for any hidden injuries.</li>
+            </ul>
+        </div>
+
+        <!-- Step 4: Remove the tube from the laryngectomy stoma if present -->
+        <div class="node" id="step-remove-tube">
+            <h1>Step 4: Remove the tube from the laryngectomy stoma if present</h1>
+            <button onclick="showInfo('info-remove-tube')">More Info</button>
+        </div>
+
+        <!-- Information about removing the tube -->
+        <div class="info" id="info-remove-tube" style="display: none;">
+            <p>Look, listen & feel at the laryngectomy stoma. Ensure oxygen is re-applied to stoma. Use Waveform capnography or Mapleson C if available.</p>
+            <!-- Image associated with the step -->
+            <img src="path_to_your_image.png" alt="Removing the tube from laryngectomy stoma" style="display: none;">
+        </div>
+
+                <!-- Step 5: IS the Patient Breathing? -->
+        <div class="node" id="step-sample">
+            <h1>Step 5: Is the Patient breathing?</h1>
+            <button onclick="showInfo('info-sample')">More Info</button>
+        </div>
+
+        <!-- Information for Sample Step with Data -->
+        <div class="info" id="info-sample" style="display: none;">
+            <p>If patient is breathing, continue with ABCDE assessment</p>
+            <p>If NOT  call call Resuscitation team </p>
+            </ul>
+            <!-- Additional details or buttons can be added as needed -->
+        </div>
+
+        <!-- Step 6: CPR if no pulse/ signs of life -->
+        <div class="node" id="CPR called">
+            <h1>Step 6: CPR if no pulse / signs of life</h1>
+            <button onclick="showInfo('CPR info')">More Info</button>
+        </div>
+
+        <div class="info" id="CPR info" style="display: none;">
+            <p>Primary emergency oxygenation.</p>
+            <p>Laryngectomy stoma ventilation via either Paediatric mask applied to stoma LMA applied to stoma</p>
+            <!-- Image associated with the step -->
+            <img src="path_to_your_image.png" alt="Removing the tube from laryngectomy stoma" style="display: none;">
+        </div>
+
+        <!-- Step 7: Secondary emergency oxygenation -->
+        <div class="node" id="Secondary emergency oxygenation">
+            <h1>Step 7: Secondary emergency oxygenation</h1>
+            <button onclick="showInfo('show Secondary emergency oxygenation')">More Info</button>
+        </div>
+
+        <div class="info" id="show Secondary emergency oxygenation" style="display: none;">
+            <p>Secondary emergency oxygenation.</p>
+            <p>Attempt Intubation of lerygectomy stoma:</p>
+            <p>Def: Small trachestomy tube / 6.0 cuffed ETT</p>
+            <p>Consider Aintree catheter and fibreoptic scope / Bougie/Airway exchange catheter</p>
+            <!-- Image associated with the step -->
+            <img src="path_to_your_image.png" alt="Removing the tube from laryngectomy stoma" style="display: none;">
+        </div>
+
+    </div>
+
+    <!-- Further steps as outlined in the flowchart -->
+    <!-- JavaScript for showing and hiding info -->
+    <script>
+        function showInfo(id) {
+            var infoElement = document.getElementById(id);
+            var images = infoElement.getElementsByTagName('img');
+            var isHidden = infoElement.style.display === 'none' || infoElement.style.display === '';
+
+            // Toggle the info section
+            infoElement.style.display = isHidden ? 'block' : 'none';
+
+            // Toggle images within the info section
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = isHidden ? 'block' : 'none';
+            }
+        }
+    </script>
+
+
+</body>
+</html>
+
