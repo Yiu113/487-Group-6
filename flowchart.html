@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbly Vertical Flowchart with Lines</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .node {
+            background-color: #e0e0e0;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="flowchartCanvas" width="800" height="600"></canvas>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const canvas = document.getElementById("flowchartCanvas");
+            const context = canvas.getContext("2d");
+
+            const nodes = [];
+
+            canvas.addEventListener("click", function (event) {
+                const newNode = {
+                    x: 50, // Fixed x-coordinate for all nodes
+                    y: nodes.length * 80 + 50, // Vertical spacing
+                    width: 120,
+                    height: 60,
+                    text: prompt("Enter text for the node:"),
+                };
+
+                if (newNode.text) {
+                    nodes.push(newNode);
+                    drawFlowchart();
+                }
+            });
+
+            function drawFlowchart() {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw lines
+                for (let i = 1; i < nodes.length; i++) {
+                    context.beginPath();
+                    context.moveTo(nodes[i - 1].x + nodes[i - 1].width / 2, nodes[i - 1].y + nodes[i - 1].height);
+                    context.lineTo(nodes[i].x + nodes[i].width / 2, nodes[i].y);
+                    context.stroke();
+                }
+
+                // Draw nodes
+                nodes.forEach(node => {
+                    context.fillStyle = "#e0e0e0";
+                    context.fillRect(node.x, node.y, node.width, node.height);
+
+                    context.strokeStyle = "#000";
+                    context.strokeRect(node.x, node.y, node.width, node.height);
+
+                    context.fillStyle = "#000";
+                    context.font = "14px Arial";
+                    context.fillText(node.text, node.x + 15, node.y + 35);
+                });
+            }
+
+            drawFlowchart();
+        });
+    </script>
+</body>
+</html>
