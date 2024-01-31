@@ -1,26 +1,28 @@
+/* Blue banner at the top for webpage title */
 .page-title {
-    background-color: #2196F3;
-    color: #fff;
-    padding: 20px 0;
+    background-color: #2196F3; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 8px 0; /* Adjusted padding for spacing */
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 12px; /* Adjust the font size */
+    font-weight: bold; /* Make the title bold */
 }
 
+/* Flowchart container */
 .flowchart {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 8px; /* Add margin to separate the title from the flowchart */
 }
 
 .node {
-    border: 2px solid #000;
-    padding: 20px 40px; /* More padding on the sides for an oval shape */
-    border-radius: 50px; /* Larger border radius for a more oval shape */
+    border: 1px solid #000;
+    padding: 6px 12px; /* Adjusted padding for smaller size */
+    border-radius: 12px; /* Smaller border radius */
     text-align: center;
-    margin: 20px 0; /* Spacing above and below the node */
-    min-width: 200px; /* Adjusted width for oval shape */
+    margin: 8px 0; /* Smaller spacing above and below the node */
+    min-width: 90px; /* Smaller width */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -32,10 +34,10 @@
     .node:not(:last-child)::after {
         content: '';
         position: absolute;
-        bottom: -40px; /* Adjusted distance to account for 'More Info' space */
+        bottom: -12px; /* Adjusted distance for smaller size */
         left: 50%;
-        width: 2px; /* Width of the line */
-        height: 40px; /* Increased height for space below the node */
+        width: 1px; /* Smaller width of the line */
+        height: 12px; /* Smaller height */
         background-color: #000;
         z-index: -1; /* Ensure the line is under the node */
     }
@@ -44,17 +46,18 @@
     .node:not(:last-child)::before {
         content: '';
         position: absolute;
-        bottom: -30px; /* Adjust position right above the line connector */
+        bottom: -8px; /* Adjusted position for smaller size */
         left: 50%;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid #000;
+        border-left: 6px solid transparent; /* Smaller size */
+        border-right: 6px solid transparent; /* Smaller size */
+        border-top: 6px solid #000; /* Smaller size */
         transform: translateX(-50%);
         z-index: 1; /* Ensure arrow is above the line */
     }
+
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 6px 12px; /* Smaller padding */
+    font-size: 12px; /* Smaller font size */
     border: none;
     background-color: #e7e7e7; /* Light grey background for the button */
     cursor: pointer;
@@ -62,13 +65,17 @@ button {
 
 .info {
     display: none;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: -20px; /* Adjusted to fit better below the node */
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: -8px; /* Adjusted to fit better below the node */
     text-align: center;
     width: auto; /* Let the width be determined by the content */
     max-width: 80%; /* Maximum width to prevent it from being too wide */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.info-yes, .info-no {
+    font-size: 12px; 
 }
 
 .info-yes {
