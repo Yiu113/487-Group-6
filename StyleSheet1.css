@@ -1,12 +1,13 @@
 /* Blue banner at the top for webpage title */
 .page-title {
-    background-color: #2196F3; /* Blue background color */
+    background-color: #003087; /* Penn State Blue background color */
     color: #fff; /* White text color */
     padding: 8px 0; /* Adjusted padding for spacing */
     text-align: center;
     font-size: 12px; /* Adjust the font size */
     font-weight: bold; /* Make the title bold */
 }
+
 
 /* Flowchart container */
 .flowchart {
@@ -30,33 +31,9 @@
     align-items: center;
 }
 
-    /* Line connectors */
-    .node:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        bottom: -12px; /* Adjusted distance for smaller size */
-        left: 50%;
-        width: 1px; /* Smaller width of the line */
-        height: 12px; /* Smaller height */
-        background-color: #000;
-        z-index: -1; /* Ensure the line is under the node */
-    }
-
-    /* Arrow head */
-    .node:not(:last-child)::before {
-        content: '';
-        position: absolute;
-        bottom: -8px; /* Adjusted position for smaller size */
-        left: 50%;
-        border-left: 6px solid transparent; /* Smaller size */
-        border-right: 6px solid transparent; /* Smaller size */
-        border-top: 6px solid #000; /* Smaller size */
-        transform: translateX(-50%);
-        z-index: 1; /* Ensure arrow is above the line */
-    }
 
 button {
-    padding: 6px 12px; /* Smaller padding */
+    padding: 12px 24px; /* Smaller padding */
     font-size: 12px; /* Smaller font size */
     border: none;
     background-color: #e7e7e7; /* Light grey background for the button */
@@ -75,16 +52,21 @@ button {
 }
 
 .info-yes, .info-no {
-    font-size: 12px; 
+    font-size: 20px; 
+}
+
+.info-yes,
+.info-no {
+    border: 2px solid #000; /* Add border for sections */
+    padding: 10px; /* Add padding for spacing */
 }
 
 .info-yes {
-    background-color: #4CAF50; /* Green background for "Yes" */
-    color: #fff; /* White text color for "Yes" */
+    color: #4CAF50; /* Green text color for "Yes" */
 }
 
 .info-no {
-    background-color: #f44336; /* Red background for "No" */
-    color: #fff; /* White text color for "No" */
+    color: #f44336; /* Red text color for "No" */
 }
+
 
