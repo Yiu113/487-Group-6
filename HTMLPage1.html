@@ -15,23 +15,22 @@
     <div class="flowchart">
         <!-- Step 1: Check if the patient is breathing -->
         <div class="node" id="step-breathing">
-            <h1>Step 1: Is the patient breathing?</h1>
+            <h1>Step 1: Call for Airway Expert Help</h1>
+            <h2 style="font-size: 20px;">Look, Listen, and Feel at the Stoma</h2>
             <button onclick="showInfo('info-breathing')">More Info</button>
         </div>
 
         <!-- Information about patient breathing -->
         <div class="info" id="info-breathing" style="display: none;">
+            <h2>Is the patient breathing?</h2>
             <div class="info-yes">
-                <ul>
-                    <li>Apply high flow oxygen to laryngectomy stoma via infant size 2 ambu mask</li>
-                    <li>Apply oxygen to face also if there is any doubt of patient having a laryngectomy.</li>
-                </ul>
+                <h2>YES:</h2>
+                <p>Apply high flow oxygen to laryngectomy stoma via infant size 2 ambu mask</p>
             </div>
             <div class="info-no">
-                <ul>
-                    <li>Call Resuscitation Team</li>
-                    <li>Begin CPR if no pulse or signs of life</li>
-                </ul>
+                <h2>NO:</h2>
+                <p>Call Resuscitation Team</p>
+                <p>Begin CPR if no pulse or signs of life</p>
             </div>
         </div>
 
@@ -45,26 +44,22 @@
         <!-- Information about laryngectomy stoma patency -->
         <div class="info" id="info-patency" style="display: none;">
             <p>Remove humidification cover if present or Inner Cannula if trach is present.</p>
-            <p>Can you pass a suction catheter?</p>
+            <h2>Can you pass a suction catheter?</h2>
             <div class="info-yes">
-                <p>YES:</p>
-                <ul>
-                    <li>The laryngectomy stoma is patent</li>
-                    <li>Perform tracheal suction</li>
-                    <li>Consider partial obstruction</li>
-                    <li>Ventilate via stoma if not breathing</li>
-                </ul>
+                <h2>YES:</h2>
+                    <p>The laryngectomy stoma is patent</p>
+                    <p>Perform tracheal suction</p>
+                    <p>Consider partial obstruction</p>
+                    <p>Ventilate via stoma if not breathing</p>
             </div>
             <div class="info-no">
-                <p>NO:</p>
-                <ul>
-                    <li>Deflate the cuff if present.</li>
-                    <li>Look, listen, and feel at the laryngectomy stoma or tube.</li>
-                    <li>Use waveform capnography or Mapleson C if available.</li>
-                </ul>
+                <h2>NO:</h2>
+                    <p>Deflate the cuff if present.</p>
+                    <p>Look, listen, and feel at the laryngectomy stoma or tube.</p>
+                    <p>Use waveform capnography or Mapleson C if available.</p>
             </div>
             <p>If the patient is stable or improving, continue with ABCDE assessment and apply high flow oxygen if needed.</p>
-            <p>If NOT, proceed to the next step and remove the tube from the laryngectomy stoma if present.</p>
+            <h2>If NOT, Proceed to Step 3.</h2>
         </div>
 
         <!-- Step 3: Remove the tube from the laryngectomy stoma if present -->
@@ -76,35 +71,37 @@
 
         <!-- Information about removing the tube -->
         <div class="info" id="info-remove-tube" style="display: none;">
-            <p>Look, listen & feel at the laryngectomy stoma. Ensure oxygen is re-applied to stoma. Use Waveform capnography.</p>
+            <p>Look, Listen & Feel at the Laryngectomy Stoma. Ensure Oxygen is re-applied to Stoma. Use Waveform Capnography.</p>
             <!-- Image associated with the step -->
-            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\strawberry.jpg" alt="Removing the tube from laryngectomy stoma" style="display: none;">
+            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\Waveform Capnography" alt="Removing the tube from laryngectomy stoma" style="max-width: 100%; height: auto; display: none;">
+            <h2>Proceed with CPR if No Pulse is Found</h2>
         </div>
 
-        <!-- Insert "Is patient breathing bubble here" prompting to continue with assessment -->
 
         <!-- Step 4: CPR if no pulse/ signs of life -->
         <div class="node" id="CPR called">
-            <h1>Step 4: CPR if no pulse / signs of life</h1>
+            <h1>Step 4: CPR</h1>
             <button onclick="showInfo('CPR info')">More Info</button>
         </div>
 
         <div class="info" id="CPR info" style="display: none;">
-            <p>Primary emergency oxygenation.</p>
+            <h1 style="font-size: 20px;">Primary Emergency Oxygenation</h1>
             <p>Laryngectomy stoma ventilation via either Paediatric mask applied to stoma LMA applied to stoma</p>
 
-            <p>Secondary Emergency Oxygenation</p>
+            <h1 style="font-size: 20px;">Secondary Emergency Oxygenation</h1>
             <p>Attempt intubation of laryngectomy stoma</p>
             <p>Size 4 DCT trach/6.0 cuffed ETT</p>
             <p>Consider Fiberoptic scope/Bougie/Airway</p>
             <p>Exchange catheter</p>
             <!-- Image associated with the step -->
-            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\mango.jpg" alt="Removing the tube from laryngectomy stoma" style="display: none;">
+            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\BetterCPR" alt="CPR For Adults" style="max-width: 100%; height: auto; display: none;">
+            <h2>If Pulse is Found or Patient is Breathing, Proceed to Step 5</h2>
         </div>
+
 
         <!-- Step 5: Proceed with Assessment-->
         <div class="node" id="Assessment">
-            <h1>Step 5: Proceed with ABCDE Assessment if Patient is Breathing</h1>
+            <h1>Step 5: ABCDE Assessment</h1>
         </div>
 
     </div>
@@ -129,3 +126,4 @@
 
 </body>
 </html>
+
