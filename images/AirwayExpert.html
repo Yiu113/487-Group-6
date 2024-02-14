@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laryngectomy Emergency Airway Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="flowchart">
+        <!-- Call for Airway Expert Help -->
+        <div class="node" id="step-breathing">
+            <h1>Call for Airway Expert Help</h1>
+            <h2 style="font-size: 20px;">(Look, Listen, and Feel at the Stoma)</h2>
+            <h3>Is the patient breathing?</h3>
+            <!-- Two buttons: Yes and No -->
+            <button onclick="goToBreathingYesPage()">Yes</button>
+            <button onclick="goToBreathingNoPage()">No</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for redirection -->
+    <script>
+        function goToBreathingYesPage() {
+            window.location.href = 'BreathingYes.html';
+        }
+
+        function goToBreathingNoPage() {
+            window.location.href = 'BreathingNo.html';
+        }
+    </script>
+
+</body>
+</html>
+

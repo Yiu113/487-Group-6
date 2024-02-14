@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assess Laryngectomy Stoma Patency - No</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="flowchart">
+        <!-- Assess laryngectomy stoma patency (No) -->
+        <div class="node" id="step-patency-no">
+            <h1>Assess laryngectomy stoma patency (No)</h1>
+            <h2>NO:</h2>
+            <p>Deflate the cuff if present.</p>
+            <p>Look, listen, and feel at the laryngectomy stoma or tube.</p>
+            <p>Use waveform capnography or Mapleson C if available.</p>
+            <button onclick="goToNextPage()">Next</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for showing and hiding info -->
+    <script>
+        function goToNextPage() {
+            window.location.href = 'AssessLaryngectomyStomaPatency.html';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assess Laryngectomy Stoma Patency</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="flowchart">
+        <!-- Assess laryngectomy stoma patency -->
+        <div class="node" id="step-patency">
+            <h1> Assess laryngectomy stoma patency</h1>
+            <p>Many laryngectomy stomas will NOT have a tube in stoma.</p>
+            <p>Remove humidification cover if present or Inner Cannula if trach is present.</p>
+            <!-- Pictures of stoma cover & Inner Cannula -->
+            <img src="stoma_cover.png" alt="Stoma Cover" style="display: block; margin: 10px auto;">
+            <img src="inner_cannula.png" alt="Inner Cannula" style="display: block; margin: 10px auto;">
+            <!-- Buttons for Yes and No options -->
+            <button onclick="goToYesPage()">Yes</button>
+            <button onclick="goToNoPage()">No</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for redirection -->
+    <script>
+        function goToYesPage() {
+            window.location.href = 'PatencyYes.html';
+        }
+
+        function goToNoPage() {
+            window.location.href = 'PatencyNo.html';
+        }
+    </script>
+
+</body>
+</html>

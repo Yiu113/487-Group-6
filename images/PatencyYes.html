@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assess Laryngectomy Stoma Patency - Yes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="flowchart">
+        <!--Assess laryngectomy stoma patency (Yes) -->
+        <div class="node" id="step-patency-yes">
+            <h1>Assess laryngectomy stoma patency (Yes)</h1>
+            <h2>YES:</h2>
+            <p>The laryngectomy stoma is patent</p>
+            <p>Perform tracheal suction</p>
+            <p>Consider partial obstruction</p>
+            <p>Ventilate via stoma if not breathing</p>
+            <button onclick="goToNextPage()">Next</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for showing and hiding info -->
+    <script>
+        function goToNextPage() {
+            window.location.href = 'AssessLaryngectomyStomaPatency.html';
+        }
+    </script>
+
+</body>
+</html>
