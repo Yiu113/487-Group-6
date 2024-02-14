@@ -82,9 +82,9 @@
                     }
                 }
             });
+
             document.getElementById("showJsonButton").addEventListener("click", function () {
-                const prettyJson = JSON.stringify(nodes, null, 4); // Using 4 spaces for indentation
-                alert(prettyJson);
+                alert(JSON.stringify(nodes, null, 2));
             });
 
             function calculateNodeSize(node) {
@@ -130,44 +130,56 @@
                 context.fillStyle = "#000";
                 context.fill();
             }
-
             function drawFlowchart() {
-                context.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Draw arrows
-                nodes.forEach(node => {
-                    node.connections.forEach(targetNode => {
-                        drawArrow(context, node.x + node.width / 2, node.y + node.height, targetNode.x + targetNode.width / 2, targetNode.y);
-                    });
-                });
+    // Draw arrows and text
+    nodes.forEach(node => {
+        node.connections.forEach(targetNode => {
+            const startX = node.x + node.width / 2;
+            const startY = node.y + node.height;
+            const endX = targetNode.x + targetNode.width / 2;
+            const endY = targetNode.y;
 
-                // Draw nodes
-                nodes.forEach(node => {
-                    context.beginPath();
+            drawArrow(context, startX, startY, endX, endY);
 
-                    if (node.shape === "rectangle") {
-                        context.rect(node.x, node.y, node.width, node.height);
-                    } else if (node.shape === "ellipse") {
-                        context.ellipse(node.x + node.width / 2, node.y + node.height / 2, node.width / 2, node.height / 2, 0, 0, 2 * Math.PI);
-                    }
+            // Calculate text position
+            const textX = (startX + endX) / 2;
+            const textY = (startY + endY) / 2;
 
-                    context.fillStyle = "#f48fb1"; /* Pink */
-                    context.strokeStyle = "#d81b60"; /* Darker Pink */
-                    context.lineWidth = 3;
-                    context.stroke();
-                    context.fill();
+            // Draw text
+            const text = prompt("Enter text for the line connecting these nodes:");
+            context.fillStyle = "#000"; /* Black */
+            context.font = "12px Arial";
+            context.fillText(text, textX, textY);
+        });
+    });
 
-                    // Draw text
-                    context.fillStyle = "#fff"; /* White */
-                    context.font = "14px Arial";
-                    context.fillText(node.text, node.x + 15, node.y + 25);
+    // Draw nodes (unchanged)
+    nodes.forEach(node => {
+        context.beginPath();
+        if (node.shape === "rectangle") {
+            context.rect(node.x, node.y, node.width, node.height);
+        } else if (node.shape === "ellipse") {
+            context.ellipse(node.x + node.width / 2, node.y + node.height / 2, node.width / 2, node.height / 2, 0, 0, 2 * Math.PI);
+        }
+        context.fillStyle = "#f48fb1"; /* Pink */
+        context.strokeStyle = "#d81b60"; /* Darker Pink */
+        context.lineWidth = 3;
+        context.stroke();
+        context.fill();
 
-                    // Draw image
-                    if (node.image) {
-                        context.drawImage(node.image, node.x + 15, node.y + 35, node.width - 30, node.height - 50);
-                    }
-                });
-            }
+        // Draw text (unchanged)
+        context.fillStyle = "#fff"; /* White */
+        context.font = "14px Arial";
+        context.fillText(node.text, node.x + 15, node.y + 25);
+
+        // Draw image (unchanged)
+        if (node.image) {
+            context.drawImage(node.image, node.x + 15, node.y + 35, node.width - 30, node.height - 50);
+        }
+    });
+}
 
             function findNodeAtPosition(x, y) {
                 for (const node of nodes) {
@@ -186,3 +198,4 @@
     </script>
 </body>
 </html>
+
