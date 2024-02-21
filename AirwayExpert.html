@@ -1,22 +1,100 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laryngectomy Emergency Airway Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .title-bar {
+            background-color: #041E42;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            color: #0C4DA2;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .node {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #041E42;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: #0C4DA2;
+            }
+    </style>
 </head>
 <body>
-
-    <div class="flowchart">
-        <!-- Call for Airway Expert Help -->
-        <div class="node" id="step-breathing">
-            <h1>Call for Airway Expert Help</h1>
-            <h2 style="font-size: 20px;">(Look, Listen, and Feel at the Stoma)</h2>
-            <h3>Is the patient breathing?</h3>
-            <!-- Two buttons: Yes and No -->
-            <button onclick="goToBreathingYesPage()">Yes</button>
-            <button onclick="goToBreathingNoPage()">No</button>
+    <div class="title-bar">
+        <h1>Laryngectomy Emergency Airway Management</h1>
+        <h2 style="font-size: 16px;">Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
+    </div>
+    <div class="container">
+        <div class="flowchart">
+            <!-- Call for Airway Expert Help -->
+            <div class="node" id="step-breathing">
+                <h2>Call for Airway Expert Help</h2>
+                <h3>(Look, Listen, and Feel at the Stoma)</h3>
+                <h4>Is the patient breathing?</h4>
+                <!-- Two buttons: Yes and No -->
+                <button onclick="goToBreathingYesPage()">Yes</button>
+                <button onclick="goToBreathingNoPage()">No</button>
+            </div>
         </div>
     </div>
 
