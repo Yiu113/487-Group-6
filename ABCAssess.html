@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCDE Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .title-bar {
+            background-color: #041E42;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            color: #0C4DA2;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .node {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #041E42;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: #0C4DA2;
+            }
+
+        .proceed-btn {
+            background-color: #041E42;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .proceed-btn:hover {
+                background-color: #0C4DA2;
+            }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title-bar">
+        <h1>Laryngectomy Emergency Airway Management</h1>
+        <h2 style="font-size: 16px;">Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
+    </div>
+    <div class="flowchart">
+        <!-- ABCDE Assessment -->
+        <div class="node" id="step-abc-assess">
+            <!-- Additional Information -->
+            <h2>If the laryngectomy stoma is patent:</h2>
+            <ul>
+                <li>Perform tracheal suctioning</li>
+                <li>Consider partial obstruction</li>
+                <li>Ventilate via stoma</li>
+            </ul>
+            <p>Continue with the ABCDE assessment.</p>
+            <h3>ABCDE Assessment</h3>
+            <p>ABCDE is a systematic approach used for the assessment and treatment of critically ill patients.</p>
+            <p>It stands for:</p>
+            <p>A - Airway</p>
+            <p>B - Breathing</p>
+            <p>C - Circulation</p>
+            <p>D - Disability</p>
+            <p>E - Exposure</p>
+            <!-- Picture of ABCDE -->
+            <img src="ABCDE.png" alt="ABCDE" class="image">
+
+            <!-- Proceed button -->
+            <button onclick="goToStomaAssessPage()">Return to Stoma Patency Assessment</button>
+            <button onclick="goToHomePage()">Return to Homepage</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for redirection -->
+    <script>
+        function goToStomaAssessPage() {
+            window.location.href = 'AssessLaryngectomyStomaPatency.html';
+        }
+
+        function goToHomePage() {
+            window.location.href = 'UpdatedHomePage.html';
+        }
+    </script>
+
+</body>
+</html>

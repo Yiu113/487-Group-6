@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .sidebar {
+            background-color: #041E42;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            padding-top: 20px;
+            overflow-y: auto;
+        }
+
+            .sidebar a {
+                display: block;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+                transition: background-color 0.3s;
+            }
+
+                .sidebar a:hover {
+                    background-color: #0C4DA2;
+                }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #041E42;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="UpdatedHomePage.html">Home</a>
+        <a href="AirwayExpert.html">Airway Expert</a>
+        <a href="BreathingNo.html">Not Breathing?</a>
+        <a href="BreathingYes.html">Breathing Yes</a>
+        <a href="AssessLaryngectomyStomaPatency.html">Assess Laryngectomy Stoma Patency</a>
+        <a href="ABCAssess.html">ABC Assess</a>
+        <a href="CathNo.html">Can't Pass a Catheter?</a>
+        <a href="RemoveStoma.html">Remove Stoma</a>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to the Sidebar Example</h1>
+        <p>This is an example of a sidebar with links to various pages.</p>
+        <p>Click on the links in the sidebar to navigate to different pages.</p>
+    </div>
+</body>
+</html>
