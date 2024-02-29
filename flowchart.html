@@ -5,11 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arrow Flowchart with Images</title>
     <style>
-        canvas {
-            border: 1px solid #000;
-            cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        #flowchartCanvas {
+            border: 2px solid #444;
             display: block;
             margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        textarea {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+            height: 200px;
+            resize: vertical;
         }
     </style>
 </head>
@@ -81,12 +114,18 @@ function copyToClipboard(text) {
                 // Ask user if they want to add an image
                 const addImageDecision = confirm("Do you want to add an image to this node?");
                 if (addImageDecision) {
-                    const imageUrl = prompt("Enter the URL of the image:");
-                    if (imageUrl) {
-                        newNode.image = new Image();
-                        newNode.image.src = imageUrl;
-                    }
+                const imageUrl = prompt("Enter the URL of the image:");
+                if (imageUrl) {
+                    newNode.image = new Image();
+                    newNode.image.onload = function() {
+                        // Draw the image onto the canvas once it's fully loaded
+                        context.drawImage(newNode.image, newNode.x + 15, newNode.y + 35, newNode.width - 30, newNode.height - 50);
+                        drawFlowchart(); // Redraw the flowchart after the image is loaded
+                    };
+                    newNode.image.src = imageUrl;
                 }
+            }
+
 
                 if (newNode.text || newNode.image) {
                     calculateNodeSize(newNode);
@@ -199,7 +238,7 @@ function copyToClipboard(text) {
                     } else if (node.shape === "ellipse") {
                         context.ellipse(node.x + node.width / 2, node.y + node.height / 2, node.width / 2, node.height / 2, 0, 0, 2 * Math.PI);
                     }
-                    context.fillStyle = "#f48fb1"; /* Pink */
+                    context.fillStyle = "#000"; /* Pink */
                     context.strokeStyle = "#d81b60"; /* Darker Pink */
                     context.lineWidth = 3;
                     context.stroke();
