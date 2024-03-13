@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrow Flowchart with Images</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
+        }
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            border: 2px solid #444;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
         #flowchartCanvas {
             border: 2px solid #444;
@@ -47,30 +75,40 @@
     </style>
 </head>
 <body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
     <canvas id="flowchartCanvas" width="1500" height="1500"></canvas>
     <button id="showJsonButton">Show JSON</button>
     <button id="loadJsonButton">Load JSON</button>
     <textarea id="jsonInput" rows="10" cols="50" placeholder="Paste JSON data here"></textarea>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Dummy authentication - Replace with your actual authentication logic
+            if (username === "admin" && password === "password") {
+                // Redirect to the flowchart page
+                initializeFlowchart();
+                document.getElementById("loginForm").reset(); // Reset the login form
+                document.querySelector(".login-container").style.display = "none"; // Hide the login container
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+
+        function initializeFlowchart() {
             const canvas = document.getElementById("flowchartCanvas");
             const context = canvas.getContext("2d");
-
-            document.getElementById("showJsonButton").addEventListener("click", function () {
-    const jsonData = JSON.stringify(nodes, null, 2);
-    copyToClipboard(jsonData);
-    alert("JSON data copied to clipboard!");
-});
-
-function copyToClipboard(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-}
 
             const nodes = [];
             let selectedNode = null;
@@ -269,7 +307,7 @@ return null;
 }
 
 drawFlowchart();
-});
+};
 </script>
 </body>
 </html>
