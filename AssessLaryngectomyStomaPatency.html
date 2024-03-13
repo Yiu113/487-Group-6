@@ -29,6 +29,7 @@
 
         h1 {
             color: white;
+            margin-top: 0;
         }
 
         h2 {
@@ -37,6 +38,7 @@
 
         p {
             line-height: 1.6;
+            margin-bottom: 10px;
         }
 
         a {
@@ -51,7 +53,8 @@
         .image {
             max-width: 100%;
             height: auto;
-            margin: 20px 0;
+            margin: 10px auto; /* Adjusted margin */
+            display: block;
         }
 
         .node {
@@ -61,6 +64,7 @@
             max-width: 400px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         button {
@@ -98,20 +102,23 @@
 <body>
     <div class="title-bar">
         <h1>Laryngectomy Emergency Airway Management</h1>
-        <h2 style="font-size: 16px;">Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
+        <h2>Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
     </div>
     <div class="flowchart">
         <!-- Assess laryngectomy stoma patency -->
         <div class="node" id="step-patency">
-            <h2>Assess laryngectomy stoma patency</h2>
-            <p>Many laryngectomy stomas will NOT have a tube in stoma.</p>
-            <p>Remove humidification cover if present or Inner Cannula if trach is present.</p>
-            <p>Do NOT remove a tracheoesophageal puncture (TEP) prosthesis</p>
+            <h2>Assess Laryngectomy Stoma Patency</h2>
+            <p>It's important to assess the patency of the laryngectomy stoma to ensure proper airway management.</p>
+            <p>Many laryngectomy stomas will not have a tube present.</p>
+            <p>If present, remove any humidification cover or inner cannula.</p>
+            <p>Do not remove a tracheoesophageal puncture (TEP) prosthesis.</p>
             <!-- Pictures of stoma cover & Inner Cannula -->
-            <img src="stoma_cover.png" alt="Stoma Cover" style="display: block; margin: 10px auto;">
-            <img src="inner_cannula.png" alt="Inner Cannula" style="display: block; margin: 10px auto;">
+            <h3>Stoma Cover Diagram</h3>
+            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\laryngectomy_stoma.jpg" alt="Stoma Cover" class="image">
+            <h4>Image of Inner Cannula</h4>
+            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\cannula" alt="Inner Cannula" class="image">
 
-            <p>Can you pass a suction catheter?</p>
+            <h4>Can you pass a suction catheter?</h4>
             <!-- Buttons for Yes and No options -->
             <button onclick="goToAssessPage()">Yes</button>
             <button onclick="goToCathNoPage()">No</button>
