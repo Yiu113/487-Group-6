@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Yes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,19 +26,52 @@
             padding: 20px;
             text-align: center;
         }
+
+        .node {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0C4DA2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .image {
+            max-width: 80%; /* Ensures the image doesn't exceed its container */
+            height: auto; /* Maintains aspect ratio */
+            margin-top: 10px; 
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathing Yes</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="title-bar">
         <h1>Laryngectomy Emergency Airway Management</h1>
-        <h2 style="font-size: 16px;">Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
+        <h2>Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
     </div>
-    <h1>Breathing Yes</h1>
-    <p>The patient is breathing.</p>
-    <a href="AssessLaryngectomyStomaPatency.html">Next</a>
+    <div class="container">
+        <div class="node">
+            <h1>Apply High Flow Oxygen</h1>
+            <p>Apply infant size 2 ambu mask (various sizes shown below) to stoma</p>
+            <img class="image" src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\infant ambu mask" alt="Infant Ambu Mask">
+            <a href="AssessLaryngectomyStomaPatency.html">Next</a>
+        </div>
+    </div>
 </body>
 </html>
+
