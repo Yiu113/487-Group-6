@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,6 +52,9 @@
             max-width: 100%;
             height: auto;
             margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .node {
@@ -61,6 +64,7 @@
             max-width: 400px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centering the text */
         }
 
         button {
@@ -105,22 +109,14 @@
         <div class="node" id="step-abc-assess">
             <!-- Additional Information -->
             <h2>If the laryngectomy stoma is patent:</h2>
-            <ul>
-                <li>Perform tracheal suctioning</li>
-                <li>Consider partial obstruction</li>
-                <li>Ventilate via stoma</li>
-            </ul>
+            <p>Perform tracheal suctioning</p>
+            <p>Consider partial obstruction</p>
+            <p>Ventilate via stoma</p>
             <p>Continue with the ABCDE assessment.</p>
             <h3>ABCDE Assessment</h3>
             <p>ABCDE is a systematic approach used for the assessment and treatment of critically ill patients.</p>
-            <p>It stands for:</p>
-            <p>A - Airway</p>
-            <p>B - Breathing</p>
-            <p>C - Circulation</p>
-            <p>D - Disability</p>
-            <p>E - Exposure</p>
             <!-- Picture of ABCDE -->
-            <img src="ABCDE.png" alt="ABCDE" class="image">
+            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\ABCDE Assessment" alt="ABCDE" class="image">
 
             <!-- Proceed button -->
             <button onclick="goToStomaAssessPage()">Return to Stoma Patency Assessment</button>
@@ -138,6 +134,6 @@
             window.location.href = 'UpdatedHomePage.html';
         }
     </script>
-
 </body>
 </html>
+
