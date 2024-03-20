@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing No</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,19 +26,48 @@
             padding: 20px;
             text-align: center;
         }
+
+        .node {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0C4DA2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathing No</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="title-bar">
-        <h1>Laryngectomy Emergency Airway Management</h1>
-        <h2 style="font-size: 16px;">Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
+    <div class="container">
+        <div class="node">
+            <h1>Follow these steps:</h1>
+                <p>Call a resuscitation team immediately.</p>
+                <p>Start CPR (Cardiopulmonary Resuscitation).</p>
+                <p>If trained, use an automated external defibrillator (AED) if one is available.</p>
+            <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\CPR.jpg" alt="CPR Image" class="image">
+        </div>
     </div>
-    <h1>Breathing No</h1>
-    <p>The patient is not breathing.</p>
-    <a href="AssessLaryngectomyStomaPatency.html">Next</a>
 </body>
 </html>
