@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Flowchart Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +11,18 @@
             margin: 0;
             padding: 0;
         }
+        .title-bar {
+            background-color: #00265d; /* Penn State Blue */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .created-by {
+            font-size: 16px;
+        }
+        
         .login-container {
             width: 300px;
             margin: 100px auto;
@@ -75,6 +87,10 @@
     </style>
 </head>
 <body>
+    <div class="title-bar">
+        <div>Flowchart Generator</div> <!-- Title Bar -->
+        <div class="created-by">Created by Richard S. Lomax, Kirtan Patel, Talen Benes</div>
+    </div>
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
@@ -243,55 +259,70 @@
                 context.fillStyle = "#000";
                 context.fill();
             }
-            function drawFlowchart() {
-                context.clearRect(0, 0, canvas.width, canvas.height);
+            
+function drawFlowchart() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Draw arrows and text
-                nodes.forEach(node => {
-                    node.connections.forEach(targetNode => {
-                        const startX = node.x + node.width / 2;
-                        const startY = node.y + node.height;
-                        const endX = targetNode.x + targetNode.width / 2;
-                        const endY = targetNode.y;
+    nodes.forEach(node => {
+        context.beginPath();
+        let textWidth = 0;
+        if (node.text) {
+            textWidth = context.measureText(node.text).width;
+        }
+        const textHeight = 18;
+        const imageHeight = node.image ? node.height - textHeight : 0;
 
-                        drawArrow(context, startX, startY, endX, endY);
+        // Calculate node size based on text width and height
+        node.width = Math.max(textWidth + 30, 100);
+        node.height = Math.max(textHeight + 30 + imageHeight, 100);
 
-                        // Calculate text position
-                        const textX = (startX + endX) / 2;
-                        const textY = (startY + endY) / 2;
+        // Draw node
+        if (node.shape === "rectangle") {
+            context.rect(node.x, node.y, node.width, node.height);
+        } else if (node.shape === "ellipse") {
+            context.ellipse(node.x + node.width / 2, node.y + node.height / 2, node.width / 2, node.height / 2, 0, 0, 2 * Math.PI);
+        }
+        context.fillStyle = "#000"; /* Pink */
+        context.strokeStyle = "#d81b60"; /* Darker Pink */
+        context.lineWidth = 3;
+        context.stroke();
+        context.fill();
 
-                        // Draw text
-                        const text = prompt("Enter text for the line connecting these nodes:");
-                        context.fillStyle = "#000"; /* Black */
-                        context.font = "12px Arial";
-                        context.fillText(text, textX, textY);
-                    });
-                });
+        // Draw text
+        context.fillStyle = "#fff"; /* White */
+        context.font = "14px Arial";
+        // Center the text within the node
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText(node.text, node.x + node.width / 2, node.y + node.height / 2);
 
-                // Draw nodes (unchanged)
-                nodes.forEach(node => {
-                    context.beginPath();
-                    if (node.shape === "rectangle") {
-                        context.rect(node.x, node.y, node.width, node.height);
-                    } else if (node.shape === "ellipse") {
-                        context.ellipse(node.x + node.width / 2, node.y + node.height / 2, node.width / 2, node.height / 2, 0, 0, 2 * Math.PI);
-                    }
-                    context.fillStyle = "#000"; /* Pink */
-                    context.strokeStyle = "#d81b60"; /* Darker Pink */
-                    context.lineWidth = 3;
-                    context.stroke();
-                    context.fill();
+        // Draw image
+        if (node.image) {
+            context.drawImage(node.image, node.x + 15, node.y + 35, node.width - 30, node.height - 50);
+        }
+    });
 
-// Draw text (unchanged)
-context.fillStyle = "#fff"; /* White */
-context.font = "14px Arial";
-context.fillText(node.text, node.x + 15, node.y + 25);
+    // Draw arrows and text
+    nodes.forEach(node => {
+        node.connections.forEach(targetNode => {
+            const startX = node.x + node.width / 2;
+            const startY = node.y + node.height;
+            const endX = targetNode.x + targetNode.width / 2;
+            const endY = targetNode.y;
 
-// Draw image (unchanged)
-if (node.image) {
-    context.drawImage(node.image, node.x + 15, node.y + 35, node.width - 30, node.height - 50);
-}
-});
+            drawArrow(context, startX, startY, endX, endY);
+
+            // Calculate text position
+            const textX = (startX + endX) / 2;
+            const textY = (startY + endY) / 2;
+
+            // Draw text
+            const text = prompt("Enter text for the line connecting these nodes:");
+            context.fillStyle = "#000"; /* Black */
+            context.font = "12px Arial";
+            context.fillText(text, textX, textY);
+        });
+    });
 }
 
 function findNodeAtPosition(x, y) {
