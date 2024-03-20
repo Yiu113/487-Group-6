@@ -1,34 +1,60 @@
-let questionCounter = 0;
-
-function addQuestion() {
-    questionCounter++;
-    const questionsContainer = document.getElementById('questionsContainer');
-
-    const questionDiv = document.createElement('div');
-    questionDiv.classList.add('question');
-
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.name = `question${questionCounter}`;
-    input.placeholder = `Enter Question ${questionCounter}`;
-    questionDiv.appendChild(input);
-
-    questionsContainer.appendChild(questionDiv);
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
 }
 
-function displayQuestions() {
-    const questionsForm = document.getElementById('questions');
-    const questions = questionsForm.querySelectorAll('input[type="text"]');
-    const resultContainer = document.getElementById('result');
+function allowDrop(ev) {
+    ev.preventDefault();
+}
 
-    resultContainer.innerHTML = '<h2>Your Questions:</h2>';
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.currentTarget.appendChild(document.getElementById(data));
+}
 
-    questions.forEach((question, index) => {
-        const questionText = question.value.trim();
-        if (questionText !== '') {
-            const questionResult = document.createElement('p');
-            questionResult.textContent = `Question ${index + 1}: ${questionText}`;
-            resultContainer.appendChild(questionResult);
-        }
-    });
+function createTask(){
+    var x = document.getElementById("inprogress");
+    var y = document.getElementById("done");
+    var z = document.getElementById("create-new-task-block");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "block";
+        z.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "none";
+        z.style.display = "flex";
+    }
+}
+
+function saveTask(){
+    // var saveButton = document.getElementById("save-button");
+    // var editButton = document.getElementById("edit-button");
+    // if (saveButton.style.display === "none") {
+    //     saveButton.style.display = "block";
+    //     editButton.style.display = "none";
+    // } else{
+    //     saveButton.style.display = "none";
+    //     editButton.style.display = "block";
+    // }
+
+    var todo = document.getElementById("todo");
+    var taskName = document.getElementById("task-name").value;
+    todo.innerHTML += `
+    <div class="task" id="${taskName.toLowerCase().split(" ").join("")}" draggable="true" ondragstart="drag(event)">
+        <span>${taskName}</span>
+    </div>
+    `
+}
+
+function editTask(){
+    var saveButton = document.getElementById("save-button");
+    var editButton = document.getElementById("edit-button");
+    if (saveButton.style.display === "none") {
+        saveButton.style.display = "block";
+        editButton.style.display = "none";
+    } else{
+        saveButton.style.display = "none";
+        editButton.style.display = "block";
+    }
 }
