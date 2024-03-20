@@ -48,6 +48,10 @@
                 text-decoration: underline;
             }
 
+        .image-container {
+            text-align: center;
+        }
+
         .image {
             max-width: 100%;
             height: auto;
@@ -61,6 +65,7 @@
             max-width: 400px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centering the text */
         }
 
         button {
@@ -96,20 +101,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="title-bar">
-        <h1>Laryngectomy Emergency Airway Management</h1>
-        <h2 style="font-size: 16px;">Created by Richard S. Lomax, Kirtan Patel, and Talen Benes</h2>
-    </div>
     <div class="flowchart">
         <!-- Deflate Cuff -->
         <div class="node" id="step-patency">
             <h2>Deflate the Cuff (if trach is present)</h2>
             <p>Look, Listen, and Feel at the laryngectomy stoma or tube</p>
-            <p>Use waveform capnography is possible</p>
-            <!-- Pictures of cuff and waveform capnography -->
-            <img src="cuff.png" alt="Cuff Diagram" style="display: block; margin: 10px auto;">
-            <img src="waveform capnography.png" alt="Waveform Capnography" style="display: block; margin: 10px auto;">
+            <p>Use waveform capnography if possible</p>
+            <!-- Container for images -->
+            <div class="image-container">
+                <!-- Pictures of cuff and waveform capnography -->
+                <h3>Laryngectomy Cuff Location</h3>
+                <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\cuff.jpg" alt="Cuff Diagram" class="image">
+                <h3>Examples of Waveform Capnography Graphs</h3>
+                <img src="C:\Users\lomax\CMPSC 488\Capstone_488_Version\images\waveform capnography.jpg" alt="Waveform Capnography" class="image">
+            </div>
+
+
             <!-- Buttons for Yes and No options -->
+            <h3>Is the patient breathing?</h3>
             <button onclick="goToAccessPage()">Yes</button>
             <button onclick="goToNoPage()">No</button>
         </div>
@@ -122,7 +131,7 @@
         }
 
         function goToNoPage() {
-            window.location.href = 'RemoveStoma.html';
+            window.location.href = 'BreathingNo.html';
         }
     </script>
 
