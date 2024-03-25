@@ -3,72 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowchart Generator</title>
+    <title>Arrow Flowchart with Images</title>
+    <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Custom styles */
-        .btn {
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .btn:hover {
-            background-color: #4C51BF;
-            color: white;
-        }
-        #flowchartCanvas {
-            border: 2px solid #4C51BF;
-            transition: border-color 0.3s;
-        }
-        #flowchartCanvas:hover {
-            border-color: #6B7280;
+        /* Add any custom styles here */
+        canvas {
+            border: 1px solid #000;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-white shadow-lg">
-        <div class="container mx-auto py-4 px-6">
-            <h1 class="text-3xl font-bold text-center">Flowchart Generator</h1>
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Your Company Name</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Home</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">About</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Services</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main class="container mx-auto py-8 px-6">
-        <canvas id="flowchartCanvas" class="border rounded-lg cursor-pointer block mx-auto mb-8"></canvas>
-        
-        <div class="flex justify-center space-x-4 mb-4">
-            <button id="addNodeButton" class="btn bg-purple-500 text-white py-2 px-4 rounded-lg">Add Node</button>
-            <button id="showJsonButton" class="btn bg-purple-500 text-white py-2 px-4 rounded-lg">Show JSON</button>
-            <button id="loadJsonButton" class="btn bg-purple-500 text-white py-2 px-4 rounded-lg">Load JSON</button>
-            <!-- Additional buttons for future features -->
-            <button id="exportImageBtn" class="btn bg-purple-500 text-white py-2 px-4 rounded-lg">Export Image</button>
-            <button id="clearCanvasBtn" class="btn bg-purple-500 text-white py-2 px-4 rounded-lg">Clear Canvas</button>
+    <div class="container mx-auto px-4 py-8">
+        <canvas id="flowchartCanvas" class="border-2 border-gray-300 mx-auto" width="1500" height="500"></canvas>
+        <div class="flex justify-center space-x-4 mt-4">
+            <button id="showJsonButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Show JSON</button>
+            <button id="loadJsonButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Load JSON</button>
+            <button id="saveJsonButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save JSON</button>
         </div>
-        
-        <textarea id="jsonInput" class="border border-gray-300 rounded-md block mx-auto mb-8 w-full md:w-1/2 px-3 py-2 placeholder-gray-500 text-gray-900" rows="6" placeholder="Paste JSON data here"></textarea>
-        
-        <!-- Placeholder for future feature: Help or Instructions -->
-        <div class="bg-white shadow-md p-6 rounded-lg mb-8">
-            <h2 class="text-xl font-semibold mb-2">Instructions</h2>
-            <p class="text-gray-700">(Placeholder: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor dui non nisl vulputate malesuada.</p>
-        </div>
-        
-        <!-- Placeholder for future feature: Settings -->
-        <div class="bg-white shadow-md p-6 rounded-lg">
-            <h2 class="text-xl font-semibold mb-2">Settings</h2>
-            <label class="block mb-2">
-                <input type="checkbox" class="mr-2"> Option 1
-            </label>
-            <label class="block mb-2">
-                <input type="checkbox" class="mr-2"> Option 2
-            </label>
-            <!-- Add more settings as needed -->
-        </div>
-    </main>
+        <textarea id="jsonInput" class="border-2 border-gray-300 block mx-auto mt-4 p-2 w-full max-w-xl" rows="10" placeholder="Paste JSON data here"></textarea>
+    </div>
 
-    <footer class="bg-gray-900 text-white text-center py-4">
-        <p>&copy; 2024 Flowchart Generator. All rights reserved.</p>
+    <!-- Modal to display stored JSON data -->
+    <div id="jsonModal" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 hidden">
+        <div class="container mx-auto px-4 py-8">
+            <div class="bg-white rounded-lg shadow-md p-6 mx-auto max-w-xl">
+                <h2 class="text-lg font-semibold mb-4">Stored JSON Data</h2>
+                <pre id="storedJson" class="whitespace-pre-wrap"></pre>
+                <button id="closeModal" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            &copy; 2024 Your Company. All rights reserved.
+        </div>
     </footer>
 
+    <!-- Include your script after Tailwind CSS -->
     <script src="script.js"></script>
 </body>
 </html>
-
 
