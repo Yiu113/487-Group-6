@@ -8,16 +8,84 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         /* Add any custom styles here */
-        canvas {
-            border: 1px solid #000;
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #666666;
+        }
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 80%;
+        }
+        .modal-content h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        .btn {
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
             cursor: pointer;
-            display: block;
-            margin: 20px auto;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-white shadow-md">
+    <header>
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
             <h1 class="text-xl font-semibold">Your Company Name</h1>
             <nav>
@@ -34,27 +102,16 @@
     <div class="container mx-auto px-4 py-8">
         <canvas id="flowchartCanvas" class="border-2 border-gray-300 mx-auto" width="1500" height="500"></canvas>
         <div class="flex justify-center space-x-4 mt-4">
-            <button id="showJsonButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Show JSON</button>
-            <button id="loadJsonButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Load JSON</button>
-            <button id="saveJsonButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save JSON</button>
+            <button id="showJsonButton" class="btn">Show JSON</button>
+            <button id="loadJsonButton" class="btn">Load JSON</button>
+            <button id="saveJsonButton" class="btn">Save JSON</button>
         </div>
         <textarea id="jsonInput" class="border-2 border-gray-300 block mx-auto mt-4 p-2 w-full max-w-xl" rows="10" placeholder="Paste JSON data here"></textarea>
     </div>
 
-    <!-- Modal to display stored JSON data -->
-    <div id="jsonModal" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 hidden">
-        <div class="container mx-auto px-4 py-8">
-            <div class="bg-white rounded-lg shadow-md p-6 mx-auto max-w-xl">
-                <h2 class="text-lg font-semibold mb-4">Stored JSON Data</h2>
-                <pre id="storedJson" class="whitespace-pre-wrap"></pre>
-                <button id="closeModal" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-gray-800 text-white py-4">
+    <footer>
         <div class="container mx-auto px-4 text-center">
-            &copy; 2024 Your Company. All rights reserved.
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
     </footer>
 
@@ -62,4 +119,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
